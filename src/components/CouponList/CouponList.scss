@@ -1,0 +1,212 @@
+.coupon-list {
+  padding: 30px 10px;
+  &__buttons {
+    display: flex;
+    margin: 30px 0 30px 0;
+    &>div {
+      margin-right: 15px;
+      button {
+        padding: 0.6rem 1rem;
+        border: none;
+        font-size: 1rem;
+        &.btn-warning {
+          background: #C39367;
+          color: #ffffff;
+          border: 2px solid #C39367;
+          transition: all 0.2s;
+          &:disabled {
+             background: rgba(195,147,103,0.5)!important;
+             border: 2px solid rgba(195,147,103,0.1)!important;
+             color: rgba(255,255,255,0.5);
+          }
+        }
+        &.btn-outline-warning {
+          background: #ffffff;
+          border: 2px solid #C39367;
+          color: #C39367;
+          transition: all 0.2s;
+          &:disabled {
+             background: rgba(255,255,255,0.5)!important;
+             border: 2px solid rgba(195,147,103,0.3)!important;
+             color: rgba(195,147,103,0.5)!important;
+          }
+          &:hover {
+            background: #C39367;
+            color: #ffffff;
+          }
+        }
+      }
+    }
+  }
+}
+.d-flex {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+}
+.table {
+  display: table;
+  border-collapse: collapse;
+  width: 100%
+}
+.thead {
+  display: table-header-group;
+  background: #FDFCFA;
+  .row {
+    color: #000000;
+    font-weight: bold;
+    font-size: 0.8rem;
+    &>.cell {
+       a {
+         color: #000000;
+         text-decoration: none;
+         font-family: OpenSans-Regular;
+       }
+    }
+    svg {
+      margin: 4px 0 0 3px;
+    }
+  }
+}
+
+.tbody {
+  display: table-row-group;
+  &>.row {
+    transition: all 0.2s;
+    &>.cell {
+      font-size: 0.8rem;
+      font-family: OpenSans-Regular;
+      vertical-align: middle;
+      &:nth-child(2),
+      &:nth-child(5),
+      &:nth-child(6),
+      &:nth-child(8),
+      &:nth-child(9),
+      &:nth-child(10) {
+        text-align: center;
+      }
+    }
+    &:hover {
+      background: #dddddd;
+      cursor: pointer;
+    }
+    &.active {
+        position: relative;
+        z-index: 100;
+        background: #454545;
+        color: #ffffff;
+        box-shadow: 0.5px 5px 15px rgba(9,9,9,0.5);
+    }
+  }
+}
+
+.row {
+  display: table-row;
+}
+.cell {
+  display: table-cell;
+  padding: 10px;
+  &-title {
+    display: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+  }
+}
+
+@media (max-width: 1200px) {
+  .table {
+    display: block;
+  }
+  .thead {
+    display: none;
+  }
+  .tbody {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .row {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-wrap: wrap;
+    width: 48%;
+    padding: 10px;
+    border: 1px solid #dddddd;
+    margin: 15px 1%;
+    &.active {
+      border: 1px solid #434343;
+    }
+  }
+  .cell {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    &>div {
+      &:first-child {
+        text-align: left;
+      }
+      &:last-child {
+        text-align: right;
+      }
+    }
+    &-title {
+      display: block;
+    }
+  }
+  .coupon-list {
+     padding: 10px;
+     &__buttons {
+       justify-content: center;
+     }
+  }
+}
+
+@media (max-width: 767px) {
+  .coupon-list {
+    &__buttons {
+        flex-direction: column;
+        align-items: center;
+        &>div {
+          margin-right: 0;
+          width: 100%;
+          margin-bottom: 10px;
+        }
+        button {
+          padding: 0.6rem 0.1rem;
+          width: 100%;
+        }
+    }
+  }
+  .row {
+    width: 100%;
+    padding: 10px;
+    margin: 8px;
+  }
+}
+
+@media (max-width: 576px) {
+   .tbody {
+     flex-direction: column;
+   }
+   .row {
+     margin: 0 0 25px 0;
+   }
+   .cell {
+     flex-direction: column;
+   }
+}

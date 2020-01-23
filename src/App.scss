@@ -1,0 +1,21 @@
+@font-face {
+  font-family: OpenSans-Regular;
+  src: local('OpenSans-Regular'), url('./fonts/OpenSans-Regular.ttf');
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.d-none {
+  display: none;
+}
+select,
+button {
+   &:focus {
+     outline: none;
+   }
+}
+.app {
+  min-height: 100vh;
+}
